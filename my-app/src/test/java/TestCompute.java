@@ -22,24 +22,24 @@ public class TestCompute {
     assertEquals(-1, c.countNumberOfOccurrences("element"));
 }
 
-@Test
-public void testCountNumberOfOccurrences_ElementNotExist() {
-    MessageQueue mq = mock(MessageQueue.class);
-    when(mq.size()).thenReturn(3); // Assuming there are elements in the queue
-    when(mq.contains("element")).thenReturn(false);
-    c = new Compute(mq);
-    assertEquals(0, c.countNumberOfOccurrences("element"));
-}
+  @Test
+  public void testCountNumberOfOccurrences_ElementNotExist() {
+      MessageQueue mq = mock(MessageQueue.class);
+      when(mq.size()).thenReturn(3); // Assuming there are elements in the queue
+      when(mq.contains("element")).thenReturn(false);
+      c = new Compute(mq);
+      assertEquals(0, c.countNumberOfOccurrences("element"));
+  }
 
-@Test
-public void testCountNumberOfOccurrences_ElementExist() {
-    MessageQueue mq = mock(MessageQueue.class);
-    when(mq.size()).thenReturn(3); // Assuming there are elements in the queue
-    when(mq.contains("element")).thenReturn(true);
-    when(mq.getAt(0)).thenReturn("element");
-    when(mq.getAt(1)).thenReturn("not_element");
-    when(mq.getAt(2)).thenReturn("element");
-    c = new Compute(mq);
-    assertEquals(2, c.countNumberOfOccurrences("element"));
-}
+  @Test
+  public void testCountNumberOfOccurrences_ElementExist() {
+      MessageQueue mq = mock(MessageQueue.class);
+      when(mq.size()).thenReturn(3); // Assuming there are elements in the queue
+      when(mq.contains("element")).thenReturn(true);
+      when(mq.getAt(0)).thenReturn("element");
+      when(mq.getAt(1)).thenReturn("not_element");
+      when(mq.getAt(2)).thenReturn("element");
+      c = new Compute(mq);
+      assertEquals(2, c.countNumberOfOccurrences("element"));
+  }
 }
