@@ -28,6 +28,7 @@ public class TestUtil {
   public void testCompute_ExceptionThrown() {
       c.compute(2, 3, 0, 7, 5); // Test with an exception thrown
   }
+  @Test
   public void testCompute_SumDivisibleByArgument() {
     assertTrue(c.compute(3, 5, 7, 11, 2)); // Test with sum divisible by one of the arguments
   }
